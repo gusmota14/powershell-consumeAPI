@@ -1,0 +1,177 @@
+﻿{
+    "sucesso":  {
+                    "codigoCompartilhamento":  "466828",
+                    "responsavel":  {
+                                        "socio":  {
+                                                      "matricula":  "00723900",
+                                                      "nome":  "GUSTAVO MOTA FERREIRA",
+                                                      "email":  "gusmota@gmail.com",
+                                                      "celular":  "(51) 9 99548412",
+                                                      "nascimento":  "1984-07-14T00:00:00",
+                                                      "idade":  41,
+                                                      "id":  "00723900"
+                                                  },
+                                        "ehResponsavel":  true,
+                                        "reservaId":  112046,
+                                        "status":  0,
+                                        "aceiteContratoDependenciaId":  0
+                                    },
+                    "reservaPrincipal":  true,
+                    "tipo":  0,
+                    "participantes":  [
+                                          {
+                                              "socio":  {
+                                                            "matricula":  "00723900",
+                                                            "nome":  "GUSTAVO MOTA FERREIRA",
+                                                            "email":  "gusmota@gmail.com",
+                                                            "celular":  "(51) 9 99548412",
+                                                            "nascimento":  "1984-07-14T00:00:00",
+                                                            "idade":  41,
+                                                            "id":  "00723900"
+                                                        },
+                                              "ehResponsavel":  true,
+                                              "reservaId":  112046,
+                                              "status":  0,
+                                              "aceiteContratoDependenciaId":  0
+                                          }
+                                      ],
+                    "guid":  "5fc4edb9-b3d0-41a5-81be-7a4c3c15c0ed",
+                    "dataSolicitacao":  "2026-03-20T14:00:00.087",
+                    "status":  82,
+                    "socio":  {
+                                  "matricula":  "00723900",
+                                  "nome":  "GUSTAVO MOTA FERREIRA",
+                                  "email":  "gusmota@gmail.com",
+                                  "celular":  "(51) 9 99548412",
+                                  "nascimento":  "1984-07-14T00:00:00",
+                                  "idade":  41,
+                                  "id":  "00723900"
+                              },
+                    "horario":  {
+                                    "id":  102592,
+                                    "codigoDependencia":  "PADEL-3 ",
+                                    "inicio":  "2026-03-21T10:45:00",
+                                    "fim":  "2026-03-21T12:00:00",
+                                    "status":  82,
+                                    "estaDisponivelParaReserva":  false
+                                },
+                    "dependencia":  {
+                                        "punicao":  {
+                                                        "id":  0,
+                                                        "mensagem":  "",
+                                                        "diasDePunicaoParaResponsavel":  0,
+                                                        "diasDePunicaoParaParticipantes":  0,
+                                                        "idDoMotivoDaSuspensao":  0,
+                                                        "possuiPunicao":  false
+                                                    },
+                                        "codigo":  "PADEL-3 ",
+                                        "descricao":  "3 - QUADRA TISCHLER",
+                                        "grupo":  "01",
+                                        "taxasDaReserva":  [
+
+                                                           ],
+                                        "taxaConvite":  {
+                                                            "descricao":  "Taxa de convite",
+                                                            "valor":  0.0,
+                                                            "contaFinanceira":  null,
+                                                            "tipo":  "TaxaConvite"
+                                                        },
+                                        "contaSociosComConvidados":  "   ",
+                                        "tags":  [
+                                                     ""
+                                                 ],
+                                        "temTaxaDeReservaParaSocio":  false,
+                                        "temTaxaDeReservaParaSocioComConvidados":  false,
+                                        "temTaxaDeReservaParaNaoSocio":  false,
+                                        "acoesPosReserva":  [
+
+                                                            ],
+                                        "diasAntecedenciaMaximaParaReserva":  1,
+                                        "diasAntecedenciaMinimaParaReserva":  0,
+                                        "minutosAntecedenciaParaCancelamento":  30,
+                                        "permiteReservaOnline":  true,
+                                        "mostrarDependenciaNoPortal":  true,
+                                        "permiteInclusaoDeNaoSocios":  false,
+                                        "contaNaoSocios":  null,
+                                        "chaveConvites":  null,
+                                        "pagamentoAntecipadoParaSocio":  false,
+                                        "permitePagamentoNaRetirada":  false,
+                                        "limiteDeConvidados":  0,
+                                        "requerContrato":  false,
+                                        "exigeConfirmacaoDaReserva":  false,
+                                        "cancelamento":  {
+                                                             "cancelarReservaSemPagamento":  true,
+                                                             "dataBaseParaCancelamento":  0,
+                                                             "diasParaCancelamentoSemPagamento":  1,
+                                                             "diasUteisParaCancelamento":  false
+                                                         },
+                                        "reservaCompartilhada":  true,
+                                        "compartilhamento":  {
+                                                                 "tipo":  "Privado",
+                                                                 "quantidadeMinimaParticipantes":  4,
+                                                                 "quantidadeMaximaParticipantes":  4,
+                                                                 "notificacoes":  {
+                                                                                      "notificarResponsavelEntradaNovoParticipante":  true,
+                                                                                      "notificarCancelamento":  true
+                                                                                  },
+                                                                 "adicaoParticipantes":  {
+                                                                                             "responsavelPodeAdicionarParticipante":  false,
+                                                                                             "idConsentimento":  0,
+                                                                                             "idMotivoCancelamentoParticipante":  0,
+                                                                                             "podeLocalizarParticipantes":  false
+                                                                                         }
+                                                             },
+                                        "emailNotificacao":  "",
+                                        "temHorariosGerados":  false,
+                                        "notificarCancelamentoParaClube":  false,
+                                        "emailNotificacaoCancelamentoParaClube":  null,
+                                        "observacaoConfirmacaoReserva":  "",
+                                        "temListaDeEsperaNoPortal":  false,
+                                        "notificarNovaReservaParaClube":  false,
+                                        "configuracao":  {
+                                                             "conviteId":  0,
+                                                             "permitirCPF":  false,
+                                                             "permitirRG":  false,
+                                                             "modoIdentificacaoConvidado":  "nomeCompletoEDocumento",
+                                                             "descricao":  null,
+                                                             "avisoPersonalizado":  "",
+                                                             "nascimentoObrigatorio":  false,
+                                                             "permitirEdicaoConvites":  false
+                                                         },
+                                        "informacoesAdicionais":  "Quadra de vidro e grama",
+                                        "finalidadeDeveSerSelecionada":  false,
+                                        "id":  62
+                                    },
+                    "convidados":  [
+
+                                   ],
+                    "temPresencaDeNaoSocios":  false,
+                    "valorDaTaxa":  0.0,
+                    "cancelamento":  null,
+                    "taxas":  [
+
+                              ],
+                    "regrasCancelamento":  [
+
+                                           ],
+                    "pendencias":  {
+                                       "confirmacaoSecretaria":  false,
+                                       "pagamento":  false
+                                   },
+                    "idModalidade":  1,
+                    "dataDeCancelamentoPorFaltaDePagamento":  "0001-01-01T00:00:00",
+                    "estornoNaSecretaria":  false,
+                    "problemas":  [
+
+                                  ],
+                    "possuiProblemas":  false,
+                    "idAceiteContrato":  0,
+                    "categoriaReserva":  4,
+                    "idPedido":  0,
+                    "dataDeCancelamentoPorFaltaDePagamentoPorExtenso":  "-17752656 horas",
+                    "id":  112046
+                },
+    "falha":  null,
+    "ehFalha":  false,
+    "ehSucesso":  true
+}
