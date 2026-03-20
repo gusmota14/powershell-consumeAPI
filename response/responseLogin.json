@@ -1,0 +1,30 @@
+﻿{
+    "ehSucesso":  true,
+    "retorno":  {
+                    "numero":  "91e0c8c5-f347-411d-a797-587763acebae",
+                    "perfil":  "SOCIO",
+                    "modulo":  "portal-associados",
+                    "usuario":  {
+                                    "nome":  "GUSTAVO MOTA FERREIRA",
+                                    "username":  "82098700091",
+                                    "tipo":  "T",
+                                    "categoria":  "CONT    ",
+                                    "situacao":  "A",
+                                    "situacaoFinanceira":  "A",
+                                    "senha":  "C57257CE3BF44F9908C705AFE6019CE2",
+                                    "jaAtualizouSenhaMD5":  true,
+                                    "matricula":  "00723900",
+                                    "email":  "gusmota@gmail.com",
+                                    "nascimento":  "1984-07-14T00:00:00",
+                                    "cpf":  "82098700091   ",
+                                    "nacionalidade":  "Brasil"
+                                },
+                    "token":  {
+                                  "expiraEm":  30,
+                                  "valor":  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJTb2NpZXR5LVBvcnRhbC1Bc3NvY2lhZG9zIiwianRpIjoiYTA2M2VjN2QtYjQ5Yi00MTViLWEyOWYtNGE4YTk5ODA0YjZjIiwiTmFtZUlkIjoiU29jaWV0eSIsIlNlc3NhbyI6IjkxZTBjOGM1LWYzNDctNDExZC1hNzk3LTU4Nzc2M2FjZWJhZSIsIk1hdHJpY3VsYSI6IjAwNzIzOTAwIiwiU29jaW8iOiIwMDcyMzkwMCIsIk1vZHVsbyI6InBvcnRhbC1hc3NvY2lhZG9zIiwiUGVyZmlsIjoiU09DSU8iLCJDbGllbnRlSWQiOiJ3ZWIiLCJleHAiOjE3NzQwMjk1MTgsImlzcyI6InNvY2lldHkiLCJhdWQiOiJzaXRlIn0.UwCrjwVDkwuo79CxTI-GMdDfqAIfrDtr15MlC2TQZys"
+                              },
+                    "acoesPosLogin":  [
+
+                                      ]
+                }
+}
