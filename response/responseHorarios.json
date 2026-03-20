@@ -429,17 +429,17 @@
                                                    "taxasDaReserva":  [
 
                                                                       ],
-                                                   "idReservaPrincipal":  112045,
+                                                   "idReservaPrincipal":  112098,
                                                    "reservaCompartilhada":  false,
                                                    "configuracaoCompartilhamento":  {
-                                                                                        "idReservaPrincipal":  112045,
+                                                                                        "idReservaPrincipal":  112098,
                                                                                         "tipo":  "Privado",
                                                                                         "quantidadeMinimaParticipantes":  4,
                                                                                         "quantidadeMaximaParticipantes":  4,
                                                                                         "vagasOcupadas":  1,
                                                                                         "reservaEhCompartilhada":  true
                                                                                     },
-                                                   "idAgenda":  102591,
+                                                   "idAgenda":  102620,
                                                    "nomeResponsavel":  ""
                                                },
                                                {
@@ -925,21 +925,21 @@
                                                {
                                                    "horaInicial":  "15:45",
                                                    "horaFinal":  "17:00",
-                                                   "status":  "Reservado",
+                                                   "status":  "Livre",
                                                    "taxasDaReserva":  [
 
                                                                       ],
-                                                   "idReservaPrincipal":  112042,
+                                                   "idReservaPrincipal":  0,
                                                    "reservaCompartilhada":  false,
                                                    "configuracaoCompartilhamento":  {
-                                                                                        "idReservaPrincipal":  112042,
+                                                                                        "idReservaPrincipal":  0,
                                                                                         "tipo":  "Privado",
                                                                                         "quantidadeMinimaParticipantes":  4,
                                                                                         "quantidadeMaximaParticipantes":  4,
-                                                                                        "vagasOcupadas":  1,
-                                                                                        "reservaEhCompartilhada":  true
+                                                                                        "vagasOcupadas":  0,
+                                                                                        "reservaEhCompartilhada":  false
                                                                                     },
-                                                   "idAgenda":  102590,
+                                                   "idAgenda":  0,
                                                    "nomeResponsavel":  ""
                                                },
                                                {
@@ -965,7 +965,7 @@
                                                {
                                                    "horaInicial":  "18:15",
                                                    "horaFinal":  "19:30",
-                                                   "status":  "Reservado",
+                                                   "status":  "Ocupado",
                                                    "taxasDaReserva":  [
 
                                                                       ],
@@ -976,7 +976,7 @@
                                                                                         "tipo":  "Privado",
                                                                                         "quantidadeMinimaParticipantes":  4,
                                                                                         "quantidadeMaximaParticipantes":  4,
-                                                                                        "vagasOcupadas":  3,
+                                                                                        "vagasOcupadas":  4,
                                                                                         "reservaEhCompartilhada":  true
                                                                                     },
                                                    "idAgenda":  102534,
@@ -1185,21 +1185,21 @@
                                                {
                                                    "horaInicial":  "15:45",
                                                    "horaFinal":  "17:00",
-                                                   "status":  "Reservado",
+                                                   "status":  "Livre",
                                                    "taxasDaReserva":  [
 
                                                                       ],
-                                                   "idReservaPrincipal":  112012,
+                                                   "idReservaPrincipal":  0,
                                                    "reservaCompartilhada":  false,
                                                    "configuracaoCompartilhamento":  {
-                                                                                        "idReservaPrincipal":  112012,
+                                                                                        "idReservaPrincipal":  0,
                                                                                         "tipo":  "Privado",
                                                                                         "quantidadeMinimaParticipantes":  4,
                                                                                         "quantidadeMaximaParticipantes":  4,
-                                                                                        "vagasOcupadas":  2,
-                                                                                        "reservaEhCompartilhada":  true
+                                                                                        "vagasOcupadas":  0,
+                                                                                        "reservaEhCompartilhada":  false
                                                                                     },
-                                                   "idAgenda":  102561,
+                                                   "idAgenda":  0,
                                                    "nomeResponsavel":  ""
                                                },
                                                {
