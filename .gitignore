@@ -1,2 +1,4 @@
 
 *.log
+response/responseLogin.json
+payload/login.json
