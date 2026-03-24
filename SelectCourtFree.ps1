@@ -3,6 +3,10 @@ param(
 )
 
 try {
+    . "$PSScriptRoot\Functions.ps1"
+
+    Write-Output "Set-LogContext"
+    Set-LogContext
     $responseHorarioFile = "response\responseHorarios.json"
     # Carrega o JSON
     $elementos = Get-Content $responseHorarioFile -Raw | ConvertFrom-Json
@@ -16,10 +20,17 @@ try {
         }
     } |
     Select-Object  @{ Name = 'codigo'; Expression = { $_.dependencia.codigo } },
-    @{ Name = 'horario'; Expression = { $_.data } }
+    @{ Name = 'data'; Expression = { $_.data } }
                 
     Write-Output "Horario: $($horario)" 
     Write-Output $resultado
+    Write-Log "Horario: $($horario)" 
+    $resultado | ForEach-Object {
+        $linha = "codigo={0} data={1}" -f 
+        $_.codigo,
+        $_.data
+        Write-Log $linha
+    }
 }
 catch {
     Write-Log "Error: $($_.Exception.Message)"
