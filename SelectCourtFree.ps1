@@ -1,5 +1,5 @@
 param(
-    [string]$horario = "20:45"
+    [string]$initialTime = "20:45"
 )
 
 try {
@@ -16,15 +16,15 @@ try {
     Where-Object {
         $_.horarios | Where-Object { 
             $_.status -ieq 'Livre' -and
-            $_.horaInicial -ieq $horario
+            $_.horaInicial -ieq $initialTime
         }
     } |
     Select-Object  @{ Name = 'codigo'; Expression = { $_.dependencia.codigo } },
     @{ Name = 'data'; Expression = { $_.data } }
                 
-    Write-Output "Horario: $($horario)" 
+    Write-Output "Horario: $($initialTime)" 
     Write-Output $resultado
-    Write-Log "Horario: $($horario)" 
+    Write-Log "Horario: $($initialTime)" 
     $resultado | ForEach-Object {
         $linha = "codigo={0} data={1}" -f 
         $_.codigo,
