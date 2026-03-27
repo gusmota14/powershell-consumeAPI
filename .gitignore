@@ -2,3 +2,9 @@
 *.log
 response/responseLogin.json
 payload/login.json
+
+response/responseHorarios.json
+
+payload/requestCourtBook.json
+
+payload/requestBook.json
