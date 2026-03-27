@@ -1,0 +1,14 @@
+﻿{
+    "codigoDependencia":  "PADEL-2 ",
+    "convidados":  [
+
+                   ],
+    "haveraNaoSociosPresentes":  false,
+    "dia":  "2026-03-27",
+    "horaInicio":  "18:15",
+    "horaFim":  "19:30",
+    "matricula":  "00723900",
+    "idModalidadeReserva":  1,
+    "idAceiteContrato":  0,
+    "idPedido":  87913
+}
