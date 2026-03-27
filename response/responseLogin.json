@@ -15,8 +15,8 @@
                                     "jaAtualizouSenhaMD5":  true,
                                     "matricula":  "0000000",
                                     "email":  "0000@gmail.com",
-                                    "nascimento":  "1984-07-14T00:00:00",
-                                    "cpf":  "82098700091   ",
+                                    "nascimento":  "1900-01-01T00:00:00",
+                                    "cpf":  "*********91   ",
                                     "nacionalidade":  "Brasil"
                                 },
                     "token":  {
