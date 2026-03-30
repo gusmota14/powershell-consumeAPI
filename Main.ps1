@@ -19,9 +19,11 @@ try {
 
     #Waiting to run at 13H59M55s
     $target = Get-Next-13h59m55s
-    $waitMs = [int][Math]::Ceiling(($target - (Get-Date)).TotalMilliseconds)
-    Write-Log "Waiting to start -Milliseconds: $waitMs"
-    Start-Sleep -Milliseconds $waitMs
+    if ($null -ne $target) {
+        $waitMs = [int][Math]::Ceiling(($target - (Get-Date)).TotalMilliseconds)
+        Write-Log "Waiting to start -Milliseconds: $waitMs"
+        Start-Sleep -Milliseconds $waitMs
+    }
 
     Write-Output "New-Token"
     New-Token
@@ -34,8 +36,7 @@ try {
     Write-Output "Application completed"
     exit 0
 }
-catch 
-{
+catch {
     Write-Log "Error: $($_.Exception.Message)"
     exit 1
 }
