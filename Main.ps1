@@ -1,8 +1,8 @@
 param(
-    [string]$courtName = "PADEL-4 ",
+    [string]$courtName = "PADEL-5 ",
     [string]$bookDate = (Get-Date).AddDays(1).ToString("yyyy-MM-dd"),
-    [string]$initialTime = "19:30",
-    [string]$finalTime = "20:45"
+    [string]$initialTime = "20:45",
+    [string]$finalTime = "22:00"
 )
 try {
     . "$PSScriptRoot\Functions.ps1"
@@ -25,9 +25,23 @@ try {
         Start-Sleep -Milliseconds $waitMs
     }
 
-    Write-Output "New-Token"
-    New-Token
-    Start-Sleep -Milliseconds 100
+    $fileLogin = "response\responseLogin.json"
+
+    if(Test-Path $fileLogin)
+    {
+        if ((Get-Item $fileLogin).LastWriteTime -le (Get-Date).AddMinutes(-15)) 
+        {
+            Write-Output "New-Token"
+            New-Token
+            Start-Sleep -Milliseconds 100
+        }
+    }
+    else
+    {
+        Write-Output "New-Token"
+        New-Token
+        Start-Sleep -Milliseconds 100
+    }
     Write-Output "Get-RequestBook"
     Get-RequestBook
     Start-Sleep -Milliseconds 100

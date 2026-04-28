@@ -155,7 +155,7 @@ function Get-RequestBook {
         Write-Log "Response saved to $OutputFile"
     }
     else {
-        Write-Log "API call failed after attempts."
+        Write-Log "Get-RequestBook - API call failed after attempts."
     }
 }
 
@@ -209,7 +209,7 @@ function New-CourtBook {
         Write-Log "Response saved to $OutputFile"
     }
     else {
-        Write-Log "API call failed after attempts."
+        Write-Log "New-CourtBook - API call failed after attempts."
     }
 }
 function Get-Next-14h {
