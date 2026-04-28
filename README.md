@@ -1,7 +1,7 @@
 # powershell-consumeAPI
 Scripts to consume a API via powerShell scripts
 
-## What it must be do before to try to run the scripts
+## Things to do before running the scripts.
 It is necessary to change the files below:
 -   login.json
 -   requestBook.json
