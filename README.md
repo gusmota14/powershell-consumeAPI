@@ -1,6 +1,15 @@
 # powershell-consumeAPI
 Scripts to consume a API via powerShell scripts
 
+## What it must be do before to try to run the scripts
+It is necessary to change the files below:
+-   login.json
+-   requestBook.json
+-   requestCourtBook.json
+
+In the `login.json` file the properties `username`, `senha` and `senhaSociety` will need to replace with your informations.
+In the `requestBook.json` and `requestCourtBook.json` the property `matricula` will need to replace with your information.
+
 ## How to use the scripts
 You need to have install the PowerShell before and use the bellow scripts:
 

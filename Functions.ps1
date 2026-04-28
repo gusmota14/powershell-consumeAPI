@@ -155,7 +155,7 @@ function Get-RequestBook {
         Write-Log "Response saved to $OutputFile"
     }
     else {
-        Write-Log "API call failed after attempts."
+        Write-Log "Get-RequestBook - API call failed after attempts."
     }
 }
 
@@ -185,9 +185,12 @@ function New-CourtBook {
 
         #Waiting to run at 14H
         $target = Get-Next-14h
-        $waitMs = [int][Math]::Ceiling(($target - (Get-Date)).TotalMilliseconds)
-        Write-Log "Waiting -Milliseconds: $waitMs"
-        Start-Sleep -Milliseconds $waitMs
+        if($null -ne $target)
+        {
+            $waitMs = [int][Math]::Ceiling(($target - (Get-Date)).TotalMilliseconds)
+            Write-Log "Waiting -Milliseconds: $waitMs"
+            Start-Sleep -Milliseconds $waitMs
+        }
 
         Write-Log "Attempt Calling API..."
         $response = Invoke-RestMethod -Uri $ApiUrl -Headers $Headers -Method POST -TimeoutSec $TimeoutSec -Body $jsonBody
@@ -206,7 +209,7 @@ function New-CourtBook {
         Write-Log "Response saved to $OutputFile"
     }
     else {
-        Write-Log "API call failed after attempts."
+        Write-Log "New-CourtBook - API call failed after attempts."
     }
 }
 function Get-Next-14h {
@@ -217,7 +220,7 @@ function Get-Next-14h {
         return $today14 
     }
     else { 
-        return $today14.AddDays(1) 
+        return $null
     }
 }
 
@@ -229,6 +232,6 @@ function Get-Next-13h59m55s {
         return $today14 
     }
     else { 
-        return $today14.AddDays(1) 
+        return $null 
     }
 }
