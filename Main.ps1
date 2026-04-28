@@ -48,6 +48,7 @@ try {
     Write-Output "New-CourtBook"
     New-CourtBook
     Write-Output "Application completed"
+    Start-Sleep -Milliseconds 3000
     exit 0
 }
 catch {
