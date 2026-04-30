@@ -26,7 +26,7 @@ try {
     Write-Output "Get-ScheduleCourts $($researchDate)"
     Get-ScheduleCourts -DateSearch "$($researchDate)T00:00:00"
     Write-Output "Application completed"
-    Start-Sleep -Milliseconds 3000
+    Read-Host "Pressione qualquer tecla para sair"
     exit 0
 }
 catch {

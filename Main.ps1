@@ -48,7 +48,7 @@ try {
     Write-Output "New-CourtBook"
     New-CourtBook
     Write-Output "Application completed"
-    Start-Sleep -Milliseconds 3000
+    Read-Host "Pressione qualquer tecla para sair"
     exit 0
 }
 catch {
