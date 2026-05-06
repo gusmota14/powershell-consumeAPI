@@ -1,18 +1,18 @@
 ﻿{
     "sucesso":  {
-                    "codigoCompartilhamento":  "466828",
+                    "codigoCompartilhamento":  "345566",
                     "responsavel":  {
                                         "socio":  {
-                                                      "matricula":  "00000000",
-                                                      "nome":  "FULANO DE TAL",
-                                                      "email":  "******@gmail.com",
-                                                      "celular":  "(51) 9 00000000",
-                                                      "nascimento":  "1900-01-01T00:00:00",
-                                                      "idade":  41,
-                                                      "id":  "00000000"
+                                                      "matricula":  "00723901",
+                                                      "nome":  "FRANCIELE RUBERTO",
+                                                      "email":  "francieler@gmail.com",
+                                                      "celular":  "(51) 9 99842848",
+                                                      "nascimento":  "1983-03-21T00:00:00",
+                                                      "idade":  43,
+                                                      "id":  "00723901"
                                                   },
                                         "ehResponsavel":  true,
-                                        "reservaId":  112046,
+                                        "reservaId":  117754,
                                         "status":  0,
                                         "aceiteContratoDependenciaId":  0
                                     },
@@ -21,39 +21,40 @@
                     "participantes":  [
                                           {
                                               "socio":  {
-                                                             "matricula":  "00000000",
-                                                              "nome":  "FULANO DE TAL",
-                                                              "email":  "******@gmail.com",
-                                                              "celular":  "(51) 9 00000000",
-                                                              "nascimento":  "1900-01-01T00:00:00",
-                                                              "idade":  41,
-                                                              "id":  "00000000"
+                                                            "matricula":  "00723901",
+                                                            "nome":  "FRANCIELE RUBERTO",
+                                                            "email":  "francieler@gmail.com",
+                                                            "celular":  "(51) 9 99842848",
+                                                            "nascimento":  "1983-03-21T00:00:00",
+                                                            "idade":  43,
+                                                            "id":  "00723901"
                                                         },
                                               "ehResponsavel":  true,
-                                              "reservaId":  112046,
+                                              "reservaId":  117754,
                                               "status":  0,
                                               "aceiteContratoDependenciaId":  0
                                           }
                                       ],
-                    "guid":  "5fc4edb9-b3d0-41a5-81be-7a4c3c15c0ed",
-                    "dataSolicitacao":  "2026-03-20T14:00:00.087",
+                    "guid":  "6c069b6d-8bd1-4884-9ca8-f2c1efbd4bef",
+                    "dataSolicitacao":  "2026-05-04T14:00:00.2",
                     "status":  82,
                     "socio":  {
-                                    "matricula":  "00000000",
-                                      "nome":  "FULANO DE TAL",
-                                      "email":  "******@gmail.com",
-                                      "celular":  "(51) 9 00000000",
-                                      "nascimento":  "1900-01-01T00:00:00",
-                                      "idade":  41,
-                                      "id":  "00000000"
+                                  "matricula":  "00723901",
+                                  "nome":  "FRANCIELE RUBERTO",
+                                  "email":  "francieler@gmail.com",
+                                  "celular":  "(51) 9 99842848",
+                                  "nascimento":  "1983-03-21T00:00:00",
+                                  "idade":  43,
+                                  "id":  "00723901"
                               },
                     "horario":  {
-                                    "id":  102592,
-                                    "codigoDependencia":  "PADEL-3 ",
-                                    "inicio":  "2026-03-21T10:45:00",
-                                    "fim":  "2026-03-21T12:00:00",
+                                    "id":  104913,
+                                    "codigoDependencia":  "PADEL-5 ",
+                                    "inicio":  "2026-05-05T19:30:00",
+                                    "fim":  "2026-05-05T20:45:00",
                                     "status":  82,
-                                    "estaDisponivelParaReserva":  false
+                                    "estaDisponivelParaReserva":  false,
+                                    "quantidadeHorarios":  0
                                 },
                     "dependencia":  {
                                         "punicao":  {
@@ -64,8 +65,8 @@
                                                         "idDoMotivoDaSuspensao":  0,
                                                         "possuiPunicao":  false
                                                     },
-                                        "codigo":  "PADEL-3 ",
-                                        "descricao":  "3 - QUADRA TISCHLER",
+                                        "codigo":  "PADEL-5 ",
+                                        "descricao":  "5 - QUADRA ATS VIGILÂNCIA",
                                         "grupo":  "01",
                                         "taxasDaReserva":  [
 
@@ -136,11 +137,13 @@
                                                              "descricao":  null,
                                                              "avisoPersonalizado":  "",
                                                              "nascimentoObrigatorio":  false,
-                                                             "permitirEdicaoConvites":  false
+                                                             "permitirEdicaoConvites":  false,
+                                                             "celularEhObrigatorio":  false
                                                          },
-                                        "informacoesAdicionais":  "Quadra de vidro e grama",
+                                        "informacoesAdicionais":  "Quadra de alvenaria e grama.",
+                                        "limiteReservasMultiplas":  1,
                                         "finalidadeDeveSerSelecionada":  false,
-                                        "id":  62
+                                        "id":  79
                                     },
                     "convidados":  [
 
@@ -168,8 +171,8 @@
                     "idAceiteContrato":  0,
                     "categoriaReserva":  4,
                     "idPedido":  0,
-                    "dataDeCancelamentoPorFaltaDePagamentoPorExtenso":  "-17752656 horas",
-                    "id":  112046
+                    "dataDeCancelamentoPorFaltaDePagamentoPorExtenso":  "-17753736 horas",
+                    "id":  117754
                 },
     "falha":  null,
     "ehFalha":  false,

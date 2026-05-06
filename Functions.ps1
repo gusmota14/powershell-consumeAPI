@@ -78,15 +78,25 @@ function Read-Token {
 }
 
 function New-Token {
+    param([Login]$login)
     $ApiUrl = "https://api-associados.areadosocio.com.br/api/Logins"
     $OutputFile = "response\responseLogin.json"
     $TimeoutSec = 30
 
     $response = $null
     try {
-        $loginFileCredentials = "payload\login.json"
+       # $loginFileCredentials = "payload\login.json"
         Write-Log "Read Login Credentials from file $($loginFileCredentials)"
-        $jsonBody = Get-Content $loginFileCredentials -Raw
+        #$jsonBody = Get-Content $loginFileCredentials -Raw
+
+        $jsonBody = [PSCustomObject]@{
+            modoAutenticacao = $login.ModoAutenticacao
+            username = $login.Username
+            senha = $login.Password
+            modulo = $login.Modulo
+            senhaSociety = $login.Password
+        } | ConvertTo-Json -Depth 50
+
         Write-Log "Attempt Calling API..."
         $Headers = Get-Header
         $response = Invoke-RestMethod -Uri $ApiUrl -Headers $Headers -Method POST -TimeoutSec $TimeoutSec -Body $jsonBody
@@ -188,6 +198,7 @@ function New-CourtBook {
         if($null -ne $target)
         {
             $waitMs = [int][Math]::Ceiling(($target - (Get-Date)).TotalMilliseconds)
+            $waitMs = $waitMs - 10
             Write-Log "Waiting -Milliseconds: $waitMs"
             Start-Sleep -Milliseconds $waitMs
         }
