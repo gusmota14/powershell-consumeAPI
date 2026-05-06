@@ -85,9 +85,7 @@ function New-Token {
 
     $response = $null
     try {
-       # $loginFileCredentials = "payload\login.json"
         Write-Log "Read Login Credentials from file $($loginFileCredentials)"
-        #$jsonBody = Get-Content $loginFileCredentials -Raw
 
         $jsonBody = [PSCustomObject]@{
             modoAutenticacao = $login.ModoAutenticacao
