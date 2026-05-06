@@ -1,13 +1,13 @@
-﻿{
+{
     "codigoDependencia":  "PADEL-5 ",
     "convidados":  [
 
                    ],
     "haveraNaoSociosPresentes":  false,
-    "dia":  "2026-05-05",
-    "horaInicio":  "19:30",
-    "horaFim":  "20:45",
-    "matricula":  "00723901",
+    "dia":  "2026-05-06",
+    "horaInicio":  "18:15",
+    "horaFim":  "19:30",
+    "matricula":  "00723900",
     "idModalidadeReserva":  1,
     "idAceiteContrato":  0,
     "idPedido":  87913

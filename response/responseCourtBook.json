@@ -1,5 +1,6 @@
 ﻿{
     "sucesso":  {
+<<<<<<< Updated upstream
                     "codigoCompartilhamento":  "345566",
                     "responsavel":  {
                                         "socio":  {
@@ -13,6 +14,21 @@
                                                   },
                                         "ehResponsavel":  true,
                                         "reservaId":  117754,
+=======
+                    "codigoCompartilhamento":  "357318",
+                    "responsavel":  {
+                                        "socio":  {
+                                                      "matricula":  "00723900",
+                                                      "nome":  "GUSTAVO MOTA FERREIRA",
+                                                      "email":  "gusmota@gmail.com",
+                                                      "celular":  "(51) 9 99548412",
+                                                      "nascimento":  "1984-07-14T00:00:00",
+                                                      "idade":  41,
+                                                      "id":  "00723900"
+                                                  },
+                                        "ehResponsavel":  true,
+                                        "reservaId":  117760,
+>>>>>>> Stashed changes
                                         "status":  0,
                                         "aceiteContratoDependenciaId":  0
                                     },
@@ -21,6 +37,7 @@
                     "participantes":  [
                                           {
                                               "socio":  {
+<<<<<<< Updated upstream
                                                             "matricula":  "00723901",
                                                             "nome":  "FRANCIELE RUBERTO",
                                                             "email":  "francieler@gmail.com",
@@ -31,10 +48,23 @@
                                                         },
                                               "ehResponsavel":  true,
                                               "reservaId":  117754,
+=======
+                                                            "matricula":  "00723900",
+                                                            "nome":  "GUSTAVO MOTA FERREIRA",
+                                                            "email":  "gusmota@gmail.com",
+                                                            "celular":  "(51) 9 99548412",
+                                                            "nascimento":  "1984-07-14T00:00:00",
+                                                            "idade":  41,
+                                                            "id":  "00723900"
+                                                        },
+                                              "ehResponsavel":  true,
+                                              "reservaId":  117760,
+>>>>>>> Stashed changes
                                               "status":  0,
                                               "aceiteContratoDependenciaId":  0
                                           }
                                       ],
+<<<<<<< Updated upstream
                     "guid":  "6c069b6d-8bd1-4884-9ca8-f2c1efbd4bef",
                     "dataSolicitacao":  "2026-05-04T14:00:00.2",
                     "status":  82,
@@ -50,6 +80,23 @@
                     "horario":  {
                                     "id":  104913,
                                     "codigoDependencia":  "PADEL-5 ",
+=======
+                    "guid":  "cfd72bda-1091-4a06-854c-b6554e682331",
+                    "dataSolicitacao":  "2026-05-04T14:00:00.18",
+                    "status":  82,
+                    "socio":  {
+                                  "matricula":  "00723900",
+                                  "nome":  "GUSTAVO MOTA FERREIRA",
+                                  "email":  "gusmota@gmail.com",
+                                  "celular":  "(51) 9 99548412",
+                                  "nascimento":  "1984-07-14T00:00:00",
+                                  "idade":  41,
+                                  "id":  "00723900"
+                              },
+                    "horario":  {
+                                    "id":  104917,
+                                    "codigoDependencia":  "PADEL-4 ",
+>>>>>>> Stashed changes
                                     "inicio":  "2026-05-05T19:30:00",
                                     "fim":  "2026-05-05T20:45:00",
                                     "status":  82,
@@ -65,8 +112,13 @@
                                                         "idDoMotivoDaSuspensao":  0,
                                                         "possuiPunicao":  false
                                                     },
+<<<<<<< Updated upstream
                                         "codigo":  "PADEL-5 ",
                                         "descricao":  "5 - QUADRA ATS VIGILÂNCIA",
+=======
+                                        "codigo":  "PADEL-4 ",
+                                        "descricao":  "4 - QUADRA BSG",
+>>>>>>> Stashed changes
                                         "grupo":  "01",
                                         "taxasDaReserva":  [
 
@@ -95,7 +147,7 @@
                                         "permiteInclusaoDeNaoSocios":  false,
                                         "contaNaoSocios":  null,
                                         "chaveConvites":  null,
-                                        "pagamentoAntecipadoParaSocio":  false,
+                                        "pagamentoAntecipadoParaSocio":  true,
                                         "permitePagamentoNaRetirada":  false,
                                         "limiteDeConvidados":  0,
                                         "requerContrato":  false,
@@ -140,10 +192,17 @@
                                                              "permitirEdicaoConvites":  false,
                                                              "celularEhObrigatorio":  false
                                                          },
+<<<<<<< Updated upstream
                                         "informacoesAdicionais":  "Quadra de alvenaria e grama.",
                                         "limiteReservasMultiplas":  1,
                                         "finalidadeDeveSerSelecionada":  false,
                                         "id":  79
+=======
+                                        "informacoesAdicionais":  "Quadra de vidro e grama.",
+                                        "limiteReservasMultiplas":  1,
+                                        "finalidadeDeveSerSelecionada":  false,
+                                        "id":  63
+>>>>>>> Stashed changes
                                     },
                     "convidados":  [
 
@@ -172,7 +231,11 @@
                     "categoriaReserva":  4,
                     "idPedido":  0,
                     "dataDeCancelamentoPorFaltaDePagamentoPorExtenso":  "-17753736 horas",
+<<<<<<< Updated upstream
                     "id":  117754
+=======
+                    "id":  117760
+>>>>>>> Stashed changes
                 },
     "falha":  null,
     "ehFalha":  false,

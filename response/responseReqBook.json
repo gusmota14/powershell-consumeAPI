@@ -1,5 +1,9 @@
 ﻿{
+<<<<<<< Updated upstream
     "idPedido":  127642,
+=======
+    "idPedido":  128396,
+>>>>>>> Stashed changes
     "valor":  null,
     "reservaLiberada":  true
 }
