@@ -5,7 +5,9 @@ param(
     [string]$finalTime = "22:00"
 )
 try {
+    . "$PSScriptRoot\Login.ps1"
     . "$PSScriptRoot\Functions.ps1"
+
 
     Write-Output "Starting application"
     Write-Output "Set-InitialParameters $($courtName) $($bookDate) $($initialTime) $($finalTime)"
@@ -26,20 +28,20 @@ try {
     }
 
     $fileLogin = "response\responseLogin.json"
-
+    $loginCredential = [Login]::new("82098700091", "e10adc3949ba59abbe56e057f20f883e")
     if(Test-Path $fileLogin)
     {
         if ((Get-Item $fileLogin).LastWriteTime -le (Get-Date).AddMinutes(-15)) 
         {
             Write-Output "New-Token"
-            New-Token
+            New-Token -Login $loginCredential
             Start-Sleep -Milliseconds 100
         }
     }
     else
     {
         Write-Output "New-Token"
-        New-Token
+        New-Token -Login $loginCredential
         Start-Sleep -Milliseconds 100
     }
     Write-Output "Get-RequestBook"
