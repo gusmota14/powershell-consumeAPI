@@ -196,7 +196,7 @@ function New-CourtBook {
         if($null -ne $target)
         {
             $waitMs = [int][Math]::Ceiling(($target - (Get-Date)).TotalMilliseconds)
-            $waitMs = $waitMs - 10
+            $waitMs = $waitMs - 40
             Write-Log "Waiting -Milliseconds: $waitMs"
             Start-Sleep -Milliseconds $waitMs
         }

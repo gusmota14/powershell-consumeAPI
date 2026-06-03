@@ -9,7 +9,7 @@ try {
     . "$PSScriptRoot\Functions.ps1"
 
 
-    Write-Output "Starting application"
+    Write-Output "Starting application $(Get-Location)"
     Write-Output "Set-InitialParameters $($courtName) $($bookDate) $($initialTime) $($finalTime)"
     Set-InitialParameters -courtName $courtName -bookDate $bookDate -initialTime $initialTime -finalTime $finalTime
     Start-Sleep -Milliseconds 500
@@ -27,11 +27,11 @@ try {
         Start-Sleep -Milliseconds $waitMs
     }
 
-    $fileLogin = "response\responseLogin.json"
-    $loginCredential = [Login]::new("82098700091", "e10adc3949ba59abbe56e057f20f883e")
-    if(Test-Path $fileLogin)
+    $fileTokenLogin = "response\responseLogin.json"
+    $loginCredential = [Login]::new("*", "e10adc3949ba59abbe56e057f20f883e")
+    if(Test-Path $fileTokenLogin)
     {
-        if ((Get-Item $fileLogin).LastWriteTime -le (Get-Date).AddMinutes(-15)) 
+        if ((Get-Item $fileTokenLogin).LastWriteTime -le (Get-Date).AddMinutes(-15)) 
         {
             Write-Output "New-Token"
             New-Token -Login $loginCredential

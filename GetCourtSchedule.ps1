@@ -5,15 +5,15 @@ try {
     . "$PSScriptRoot\Login.ps1"
     . "$PSScriptRoot\Functions.ps1"
 
-    $fileLogin = "response\responseLogin.json"
-    $loginCredential = [Login]::new("00021519013", "e10adc3949ba59abbe56e057f20f883e")
+    $fileTokenLogin = "response\responseLogin.json"
+    $loginCredential = [Login]::new("*", "e10adc3949ba59abbe56e057f20f883e")
 
-    Write-Output "Set-LogContext"
+    Write-Output "Set-LogContext $(Get-Location)"
     Set-LogContext
     Start-Sleep -Milliseconds 100
-    if(Test-Path $fileLogin)
+    if(Test-Path $fileTokenLogin)
     {
-        if ((Get-Item $fileLogin).LastWriteTime -le (Get-Date).AddMinutes(-15)) 
+        if ((Get-Item $fileTokenLogin).LastWriteTime -le (Get-Date).AddMinutes(-15)) 
         {
             Write-Output "New-Token"
             New-Token -Login $loginCredential
