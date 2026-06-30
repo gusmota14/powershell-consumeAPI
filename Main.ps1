@@ -7,8 +7,7 @@ param(
 try {
     . "$PSScriptRoot\Login.ps1"
     . "$PSScriptRoot\Functions.ps1"
-
-
+    
     Write-Output "Starting application $(Get-Location)"
     Write-Output "Set-InitialParameters $($courtName) $($bookDate) $($initialTime) $($finalTime)"
     Set-InitialParameters -courtName $courtName -bookDate $bookDate -initialTime $initialTime -finalTime $finalTime
@@ -16,11 +15,16 @@ try {
     Write-Output "Set-LogContext"
     Set-LogContext
     Start-Sleep -Milliseconds 100
+
+    $timeDifference = Get-TimeDifference
+    Write-Output "Time Difference: $($timeDifference) ms"
+    Write-Log "Time Difference: $($timeDifference) ms"
+    Start-Sleep -Milliseconds 100
     Write-Log "Set-InitialParameters $($courtName) $($bookDate) $($initialTime) $($finalTime)"
     Start-Sleep -Milliseconds 100
 
     #Waiting to run at 13H59M55s
-    $target = Get-Next-13h59m55s
+    $target = Get-Next-13h59m55s -timeDifference $timeDifference
     if ($null -ne $target) {
         $waitMs = [int][Math]::Ceiling(($target - (Get-Date)).TotalMilliseconds)
         Write-Log "Waiting to start -Milliseconds: $waitMs"
@@ -48,7 +52,7 @@ try {
     Get-RequestBook
     Start-Sleep -Milliseconds 100
     Write-Output "New-CourtBook"
-    New-CourtBook
+    New-CourtBook -timeDifference $timeDifference
     Write-Output "Application completed"
     Read-Host "Pressione qualquer tecla para sair"
     exit 0

@@ -1,3 +1,12 @@
+function Get-TimeDifference {
+    $timeLoad1 = Get-Date
+    $response = Invoke-WebRequest -Uri "https://www.horariodebrasilia.org/"
+    $serverTime = [datetime]$response.Headers.Date
+    $timeLoad2 = Get-Date
+    $totalTimeLoad = ($timeLoad2 - $timeLoad1).TotalMilliseconds
+    $timeDifference = ($serverTime - $timeLoad2).TotalMilliseconds
+    return $timeDifference + $totalTimeLoad
+}
 
 function Get-LogFileName {
     $LogFile = "logs\api-$(Get-Date -Format 'yyyy-MM-dd').log"
@@ -168,6 +177,7 @@ function Get-RequestBook {
 }
 
 function New-CourtBook {
+    param([double]$timeDifference = 0)
     $ApiUrl = "https://api-associados.areadosocio.com.br/api/Reservas"
     $OutputFile = "response\responseCourtBook.json"
     $TimeoutSec = 30
@@ -192,7 +202,7 @@ function New-CourtBook {
         Write-Log "Payload: $($jsonBody)"
 
         #Waiting to run at 14H
-        $target = Get-Next-14h
+        $target = Get-Next-14h -timeDifference $timeDifference
         if($null -ne $target)
         {
             $waitMs = [int][Math]::Ceiling(($target - (Get-Date)).TotalMilliseconds)
@@ -222,9 +232,11 @@ function New-CourtBook {
     }
 }
 function Get-Next-14h {
+    param([double]$timeDifference = 0)
     # Calcula o tempo em milliseconds que deve ser aguardado até as 14 horas
     $now   = Get-Date
-    $today14 = Get-Date -Hour 14 -Minute 00 -Second 0 -Millisecond 0
+    $now = $now.AddMilliseconds($timeDifference)
+    $today14 = Get-Date -Hour 14 -Minute  -Second 0 -Millisecond 0
     if ($now -lt $today14) { 
         return $today14 
     }
@@ -234,8 +246,10 @@ function Get-Next-14h {
 }
 
 function Get-Next-13h59m55s {
+    param([double]$timeDifference = 0)
     # Calcula o tempo em milliseconds que deve ser aguardado até as 13 horas 59m 45s
     $now   = Get-Date
+    $now = $now.AddMilliseconds($timeDifference)
     $today14 = Get-Date -Hour 13 -Minute 59 -Second 45 -Millisecond 0
     if ($now -lt $today14) { 
         return $today14 
