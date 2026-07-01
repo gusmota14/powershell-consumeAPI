@@ -1,6 +1,6 @@
 function Get-TimeDifference {
     $timeLoad1 = Get-Date
-    $response = Invoke-WebRequest -Uri "https://www.horariodebrasilia.org/"
+    $response = Invoke-WebRequest -Uri "https://www.horariodebrasilia.org/" -UseBasicParsing
     $serverTime = [datetime]$response.Headers.Date
     $timeLoad2 = Get-Date
     $totalTimeLoad = ($timeLoad2 - $timeLoad1).TotalMilliseconds
@@ -236,7 +236,7 @@ function Get-Next-14h {
     # Calcula o tempo em milliseconds que deve ser aguardado até as 14 horas
     $now   = Get-Date
     $now = $now.AddMilliseconds($timeDifference)
-    $today14 = Get-Date -Hour 14 -Minute  -Second 0 -Millisecond 0
+    $today14 = Get-Date -Hour 14 -Minute 0 -Second 0 -Millisecond 0
     if ($now -lt $today14) { 
         return $today14 
     }
