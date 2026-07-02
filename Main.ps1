@@ -17,7 +17,9 @@ try {
     Start-Sleep -Milliseconds 100
 
     $timeDifference = Get-TimeDifference
+    [Console]::ForegroundColor = "Red"
     Write-Output "Time Difference: $($timeDifference) ms"
+    [Console]::ResetColor()
     Write-Log "Time Difference: $($timeDifference) ms"
     Start-Sleep -Milliseconds 100
     Write-Log "Set-InitialParameters $($courtName) $($bookDate) $($initialTime) $($finalTime)"

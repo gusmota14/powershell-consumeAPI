@@ -7,15 +7,20 @@ $timeLoad = ($timeLoad2 - $timeLoad1).TotalMilliseconds
 
 $dataPC1 = Get-Date
 $diferenca = ($serverTime - $dataPC1).TotalMilliseconds
-
+[Console]::ForegroundColor = "Red"
 Write-Output "Local Time: $($dataPC1.ToString('HH:mm:ss fff'))"
+[Console]::ResetColor()
 Write-Output "Time Load Site: $($timeLoad) ms"
+[Console]::ForegroundColor = "Red"
 Write-Output "Time Difference: $($diferenca) ms"
+[Console]::ResetColor()
 $dataPC1 = $dataPC1.AddMilliseconds($diferenca)
 $dataPC1 = $dataPC1.AddMilliseconds($timeLoad)
-
+[Console]::ForegroundColor = "Green"
 Write-Output "Site Time: $($serverTime.ToString('HH:mm:ss fff'))"
+[Console]::ForegroundColor = "Blue"
 Write-Output "Local Time Update: $($dataPC1.ToString('HH:mm:ss fff'))"
+[Console]::ResetColor()
 
 
 
