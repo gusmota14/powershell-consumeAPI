@@ -1,3 +1,5 @@
+. "$PSScriptRoot\Functions.ps1"
+
 $timeLoad1 = Get-Date
 Write-Output "Local Time Start: $($timeLoad1.ToString('HH:mm:ss'))"
 $response = Invoke-WebRequest -Uri "https://www.horariodebrasilia.org/" -UseBasicParsing
@@ -21,6 +23,23 @@ Write-Output "Site Time: $($serverTime.ToString('HH:mm:ss fff'))"
 [Console]::ForegroundColor = "Blue"
 Write-Output "Local Time Update: $($dataPC1.ToString('HH:mm:ss fff'))"
 [Console]::ResetColor()
+
+$timeDifference = Get-TimeDifference
+$data = Get-Next-14h -timeDifference $timeDifference
+Write-Output "14H: $($data.ToString('HH:mm:ss fff'))"
+
+$waitMs = [int][Math]::Ceiling(($data - (Get-Date)).TotalMilliseconds)
+$waitMs = $waitMs - 40
+Write-Output "Waiting -Milliseconds: $waitMs"
+
+$data = Get-Next-14h
+Write-Output "14H: $($data.ToString('HH:mm:ss fff'))"
+
+$waitMs = [int][Math]::Ceiling(($data - (Get-Date)).TotalMilliseconds)
+$waitMs = $waitMs - 40
+Write-Output "Waiting -Milliseconds: $waitMs"
+
+
 
 
 

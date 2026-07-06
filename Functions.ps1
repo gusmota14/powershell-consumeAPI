@@ -235,9 +235,9 @@ function Get-Next-14h {
     param([double]$timeDifference = 0)
     # Calcula o tempo em milliseconds que deve ser aguardado até as 14 horas
     $now   = Get-Date
-    $now = $now.AddMilliseconds($timeDifference)
     $today14 = Get-Date -Hour 14 -Minute 0 -Second 0 -Millisecond 0
-    if ($now -lt $today14) { 
+    if ($now -lt $today14) {
+        $today14 = $today14.AddMilliseconds($timeDifference)
         return $today14 
     }
     else { 
@@ -248,10 +248,10 @@ function Get-Next-14h {
 function Get-Next-13h59m55s {
     param([double]$timeDifference = 0)
     # Calcula o tempo em milliseconds que deve ser aguardado até as 13 horas 59m 45s
-    $now   = Get-Date
-    $now = $now.AddMilliseconds($timeDifference)
+    $now = Get-Date
     $today14 = Get-Date -Hour 13 -Minute 59 -Second 45 -Millisecond 0
     if ($now -lt $today14) { 
+        $today14 = $today14.AddMilliseconds($timeDifference)
         return $today14 
     }
     else { 

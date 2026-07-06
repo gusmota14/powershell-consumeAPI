@@ -15,14 +15,12 @@ try {
     Write-Output "Set-LogContext"
     Set-LogContext
     Start-Sleep -Milliseconds 100
-
+    Write-Output "Get-TimeDifference"
     $timeDifference = Get-TimeDifference
     [Console]::ForegroundColor = "Red"
     Write-Output "Time Difference: $($timeDifference) ms"
     [Console]::ResetColor()
     Write-Log "Time Difference: $($timeDifference) ms"
-    Start-Sleep -Milliseconds 100
-    Write-Log "Set-InitialParameters $($courtName) $($bookDate) $($initialTime) $($finalTime)"
     Start-Sleep -Milliseconds 100
 
     #Waiting to run at 13H59M55s
@@ -63,5 +61,3 @@ catch {
     Write-Log "Error: $($_.Exception.Message)"
     exit 1
 }
-
-
