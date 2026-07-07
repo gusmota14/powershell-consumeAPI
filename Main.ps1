@@ -1,5 +1,5 @@
 param(
-    [string]$courtName = "PADEL-5 ",
+    [string]$courtName = "PADEL-1 ",
     [string]$bookDate = (Get-Date).AddDays(1).ToString("yyyy-MM-dd"),
     [string]$initialTime = "20:45",
     [string]$finalTime = "22:00"
@@ -20,7 +20,6 @@ try {
     [Console]::ForegroundColor = "Red"
     Write-Output "Time Difference: $($timeDifference) ms"
     [Console]::ResetColor()
-    Write-Log "Time Difference: $($timeDifference) ms"
     Start-Sleep -Milliseconds 100
 
     #Waiting to run at 13H59M55s
@@ -32,7 +31,7 @@ try {
     }
 
     $fileTokenLogin = "response\responseLogin.json"
-    $loginCredential = [Login]::new("*", "e10adc3949ba59abbe56e057f20f883e")
+    $loginCredential = [Login]::new("82098700091", "e10adc3949ba59abbe56e057f20f883e")
     if(Test-Path $fileTokenLogin)
     {
         if ((Get-Item $fileTokenLogin).LastWriteTime -le (Get-Date).AddMinutes(-15)) 

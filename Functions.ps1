@@ -1,11 +1,30 @@
 function Get-TimeDifference {
-    $timeLoad1 = Get-Date
     $response = Invoke-WebRequest -Uri "https://www.horariodebrasilia.org/" -UseBasicParsing
-    $serverTime = [datetime]$response.Headers.Date
     $timeLoad2 = Get-Date
-    $totalTimeLoad = ($timeLoad2 - $timeLoad1).TotalMilliseconds
-    $timeDifference = ($serverTime - $timeLoad2).TotalMilliseconds
-    return $timeDifference + $totalTimeLoad
+    $timeLoad1 = Get-Date
+    $timeLoad1 = $timeLoad1.AddMilliseconds(-$timeLoad1.Millisecond)
+    $serverTime = [datetime]$response.Headers.Date
+    $timeDifference = [double]($serverTime - $timeLoad1).TotalMilliseconds
+    if($timeDifference -gt (-500)) 
+    {
+        Write-Log "Local Time: $($timeLoad1.ToString('HH:mm:ss fff'))"
+        Write-Log "Server Time: $($serverTime.ToString('HH:mm:ss fff'))"
+        $timeDifference = 0
+        return $timeDifference
+    }
+    else
+    {
+        $timeDifference = ($serverTime - $timeLoad2).TotalMilliseconds
+        Write-Log "Local Time: $($timeLoad2.ToString('HH:mm:ss fff'))"
+        Write-Log "Server Time: $($serverTime.ToString('HH:mm:ss fff'))"
+        if($timeDifference -lt 0)
+        {
+            Write-Log "Time Difference: $($timeDifference) ms"
+            return $timeDifference
+        }
+        $timeDifference = 0
+        return $timeDifference
+    }
 }
 
 function Get-LogFileName {
