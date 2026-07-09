@@ -1,30 +1,19 @@
 function Get-TimeDifference {
-    $response = Invoke-WebRequest -Uri "https://www.horariodebrasilia.org/" -UseBasicParsing
-    $timeLoad2 = Get-Date
-    $timeLoad1 = Get-Date
-    $timeLoad1 = $timeLoad1.AddMilliseconds(-$timeLoad1.Millisecond)
-    $serverTime = [datetime]$response.Headers.Date
-    $timeDifference = [double]($serverTime - $timeLoad1).TotalMilliseconds
-    if($timeDifference -gt (-500)) 
-    {
-        Write-Log "Local Time: $($timeLoad1.ToString('HH:mm:ss fff'))"
-        Write-Log "Server Time: $($serverTime.ToString('HH:mm:ss fff'))"
-        $timeDifference = 0
-        return $timeDifference
-    }
-    else
-    {
-        $timeDifference = ($serverTime - $timeLoad2).TotalMilliseconds
-        Write-Log "Local Time: $($timeLoad2.ToString('HH:mm:ss fff'))"
-        Write-Log "Server Time: $($serverTime.ToString('HH:mm:ss fff'))"
-        if($timeDifference -lt 0)
-        {
-            Write-Log "Time Difference: $($timeDifference) ms"
-            return $timeDifference
+    [Console]::ForegroundColor = "Green"
+    Write-Host "Verificando diferenca de horario com o servidor NTP..."
+    $resultados = w32tm /stripchart /computer:pool.ntp.br /samples:5 /dataonly
+
+    $offsets = foreach ($linha in $resultados) {
+        if ($linha -match '([+-]\d+\.\d+)s') {
+            [double]$matches[1]
         }
-        $timeDifference = 0
-        return $timeDifference
     }
+    $mediaSegundos = ($offsets | Measure-Object -Average).Average
+    $mediaMs = $mediaSegundos * (-1000)
+    Write-Host $resultados
+    Write-Host "Media: $mediaMs ms"
+    [Console]::ResetColor()
+    return $mediaMs
 }
 
 function Get-LogFileName {
@@ -225,7 +214,7 @@ function New-CourtBook {
         if($null -ne $target)
         {
             $waitMs = [int][Math]::Ceiling(($target - (Get-Date)).TotalMilliseconds)
-            $waitMs = $waitMs - 40
+            $waitMs = $waitMs - 20
             Write-Log "Waiting -Milliseconds: $waitMs"
             Start-Sleep -Milliseconds $waitMs
         }
@@ -264,7 +253,7 @@ function Get-Next-14h {
     }
 }
 
-function Get-Next-13h59m55s {
+function Get-Next-13h59m45s {
     param([double]$timeDifference = 0)
     # Calcula o tempo em milliseconds que deve ser aguardado até as 13 horas 59m 45s
     $now = Get-Date

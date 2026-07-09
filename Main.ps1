@@ -8,25 +8,26 @@ try {
     . "$PSScriptRoot\Login.ps1"
     . "$PSScriptRoot\Functions.ps1"
     
-    Write-Output "Starting application $(Get-Location)"
-    Write-Output "Set-InitialParameters $($courtName) $($bookDate) $($initialTime) $($finalTime)"
+    Write-Host "Starting application $(Get-Location)"
+    Write-Host "Set-InitialParameters $($courtName) $($bookDate) $($initialTime) $($finalTime)"
     Set-InitialParameters -courtName $courtName -bookDate $bookDate -initialTime $initialTime -finalTime $finalTime
     Start-Sleep -Milliseconds 500
-    Write-Output "Set-LogContext"
+    Write-Host "Set-LogContext"
     Set-LogContext
     Start-Sleep -Milliseconds 100
-    Write-Output "Get-TimeDifference"
+    Write-Host "Get-TimeDifference"
     $timeDifference = Get-TimeDifference
     [Console]::ForegroundColor = "Red"
-    Write-Output "Time Difference: $($timeDifference) ms"
+    Write-Host "Time Difference: $($timeDifference) ms"
     [Console]::ResetColor()
     Start-Sleep -Milliseconds 100
 
-    #Waiting to run at 13H59M55s
-    $target = Get-Next-13h59m55s -timeDifference $timeDifference
+    #Waiting to run at 13H59M45s
+    $target = Get-Next-13h59m45s -timeDifference $timeDifference
     if ($null -ne $target) {
         $waitMs = [int][Math]::Ceiling(($target - (Get-Date)).TotalMilliseconds)
         Write-Log "Waiting to start -Milliseconds: $waitMs"
+        Write-Host "Waiting to start -Milliseconds: $waitMs"
         Start-Sleep -Milliseconds $waitMs
     }
 
@@ -36,23 +37,23 @@ try {
     {
         if ((Get-Item $fileTokenLogin).LastWriteTime -le (Get-Date).AddMinutes(-15)) 
         {
-            Write-Output "New-Token"
+            Write-Host "New-Token"
             New-Token -Login $loginCredential
             Start-Sleep -Milliseconds 100
         }
     }
     else
     {
-        Write-Output "New-Token"
+        Write-Host "New-Token"
         New-Token -Login $loginCredential
         Start-Sleep -Milliseconds 100
     }
-    Write-Output "Get-RequestBook"
+    Write-Host "Get-RequestBook"
     Get-RequestBook
     Start-Sleep -Milliseconds 100
-    Write-Output "New-CourtBook"
+    Write-Host "New-CourtBook"
     New-CourtBook -timeDifference $timeDifference
-    Write-Output "Application completed"
+    Write-Host "Application completed"
     Read-Host "Pressione qualquer tecla para sair"
     exit 0
 }
