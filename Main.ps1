@@ -23,7 +23,7 @@ try {
     Start-Sleep -Milliseconds 100
 
     #Waiting to run at 13H59M45s
-    $target = Get-Next-13h59m45s -timeDifference $timeDifference
+    $target = Get-Next-13h59m45s
     if ($null -ne $target) {
         $waitMs = [int][Math]::Ceiling(($target - (Get-Date)).TotalMilliseconds)
         Write-Log "Waiting to start -Milliseconds: $waitMs"

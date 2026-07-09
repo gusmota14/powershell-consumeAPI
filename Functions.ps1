@@ -9,7 +9,7 @@ function Get-TimeDifference {
         }
     }
     $mediaSegundos = ($offsets | Measure-Object -Average).Average
-    $mediaMs = $mediaSegundos * (-1000)
+    $mediaMs = $mediaSegundos * (1000)
     Write-Host $resultados
     Write-Host "Media: $mediaMs ms"
     [Console]::ResetColor()
@@ -210,11 +210,12 @@ function New-CourtBook {
         Write-Log "Payload: $($jsonBody)"
 
         #Waiting to run at 14H
-        $target = Get-Next-14h -timeDifference $timeDifference
+        $target = Get-Next-14h
         if($null -ne $target)
         {
             $waitMs = [int][Math]::Ceiling(($target - (Get-Date)).TotalMilliseconds)
-            $waitMs = $waitMs - 20
+            $waitMs = [int][Math]::Ceiling($waitMs + $timeDifference)
+            $waitMs = $waitMs - 10
             Write-Log "Waiting -Milliseconds: $waitMs"
             Start-Sleep -Milliseconds $waitMs
         }
@@ -240,12 +241,10 @@ function New-CourtBook {
     }
 }
 function Get-Next-14h {
-    param([double]$timeDifference = 0)
     # Calcula o tempo em milliseconds que deve ser aguardado até as 14 horas
     $now   = Get-Date
     $today14 = Get-Date -Hour 14 -Minute 0 -Second 0 -Millisecond 0
     if ($now -lt $today14) {
-        $today14 = $today14.AddMilliseconds($timeDifference)
         return $today14 
     }
     else { 
@@ -254,12 +253,10 @@ function Get-Next-14h {
 }
 
 function Get-Next-13h59m45s {
-    param([double]$timeDifference = 0)
     # Calcula o tempo em milliseconds que deve ser aguardado até as 13 horas 59m 45s
     $now = Get-Date
     $today14 = Get-Date -Hour 13 -Minute 59 -Second 45 -Millisecond 0
     if ($now -lt $today14) { 
-        $today14 = $today14.AddMilliseconds($timeDifference)
         return $today14 
     }
     else { 
