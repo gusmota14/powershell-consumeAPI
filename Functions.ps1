@@ -1,6 +1,8 @@
 function Get-TimeDifference {
     [Console]::ForegroundColor = "Green"
     Write-Host "Verificando diferenca de horario com o servidor NTP..."
+    #offset = servidor - local
+    #Valor positivo indica que o servidor esta adiantado em relacao ao horario local
     $resultados = w32tm /stripchart /computer:pool.ntp.br /samples:5 /dataonly
 
     $offsets = foreach ($linha in $resultados) {
@@ -214,7 +216,8 @@ function New-CourtBook {
         if($null -ne $target)
         {
             $waitMs = [int][Math]::Ceiling(($target - (Get-Date)).TotalMilliseconds)
-            $waitMs = [int][Math]::Ceiling($waitMs + $timeDifference)
+            #timeDifference positivo indica que o servidor esta adiantado em relacao ao horario local, neste caso, o tempo de espera deve ser menor, pois o servidor esta adiantado.
+            $waitMs = [int][Math]::Ceiling($waitMs - $timeDifference)
             $waitMs = $waitMs - 10
             Write-Log "Waiting -Milliseconds: $waitMs"
             Start-Sleep -Milliseconds $waitMs
