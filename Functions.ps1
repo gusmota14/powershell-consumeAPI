@@ -15,6 +15,16 @@ function Get-TimeDifference {
     Write-Host $resultados
     Write-Host "Media: $mediaMs ms"
     [Console]::ResetColor()
+    if($null -eq $mediaMs)
+    {
+        Write-Host "Erro ao calcular a diferenca de horario com o servidor NTP. Valor retornado nulo."
+        Write-Log "Erro ao calcular a diferenca de horario com o servidor NTP. Valor retornado nulo."
+        $mediaMs = 0
+    }
+    else
+    {
+        Write-Log "Diferenca de horario com o servidor NTP: $($mediaMs) ms"
+    }
     return $mediaMs
 }
 
